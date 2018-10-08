@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cuisines</title>
+	<meta name="viewport" content="width=device-width">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="p-cuisines">
+
+	<nav>
+		<ul id="nav">
+			<li class="t-cuisines"><a class="active" href="cuisines.html">Cuisines</a></li>
+			<li class="t-chefs"><a href="chefs.html">Chefs</a></li>
+			<li class="t-reviews"><a href="reviews.html">Reviews</a></li>
+			<li class="t-delivery"><a href="delivery.html">Delivery</a></li>
+		</ul>
+	</nav>
+
+	<div class="content"></div>
+	<script>
+
+var tabs = document.querySelectorAll('#nav a');
+tabs.forEach(tab => tab.addEventListener('click', makeActive));
+
+function makeActive() {
+	makeInactive();
+	console.log(this.href);
+	this.classList.add('active');
+	if (this.href.includes('cuisines')) {
+		contentPara.innerHTML = cuisines;
+	} else if (this.href.includes('chefs')) {
+		contentPara.innerHTML = chefs;
+	} else if (this.href.includes('reviews')) {
+		contentPara.innerHTML = reviews;
+	} else if (this.href.includes('delivery')) {
+		contentPara.innerHTML = delivery;
+	}
+	event.preventDefault();
+}
+
+function makeInactive() {
+	tabs.forEach(tab => tab.classList.remove('active'));
+}
+
+
+var cuisines =
+	'Cuisines. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.';
+
+var chefs =
+	'Chefs. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
+
+var reviews =
+	'Reviews. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.';
+
+var delivery =
+	'Delivery. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.';
+
+var contentPara = document.querySelector('.content');
+contentPara.innerHTML = cuisines;
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tabs - flex</title>
+	<style>
+	body {
+		margin:0;
+		font-family:"Lucida Grande", sans-serif;
+		font-size:100%;
+		padding-bottom: 100rem;
+	}
+	#nav {
+		display: flex;
+		background:#ffcb2d;
+		margin:0; 
+		padding:10px 0 0 46px;
+		list-style:none;
+		background: linear-gradient(to bottom, #ffcb2d 0%,#ffcb2d 96%,#9b8748 100%);
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+	#nav li {
+		display: flex;
+	}
+	#nav li a {
+		text-decoration:none;
+		color:#333;
+		padding: 4px 8px;
+		border: 1px solid #9b8748;
+		margin: 0 6px 0 0;
+		background-image: linear-gradient(to bottom, rgba(255,236,165,1) 0%,rgba(232,213,149,1) 6%,rgba(253,233,162,1) 94%,rgba(253,233,162,1) 100%);
+		transition: all 0.25s linear;
+	}
+	#nav li a.active {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+		border-bottom: none;
+		padding-right: 6rem;
+	}
+
+	#nav li a:hover {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+		border-bottom: none;
+	}
+
+	div {
+		height: 10rem;
+		border: 1px solid #9b8748;
+		padding-top: 4rem;
+		padding-left: 46px;
+		margin-top: 2rem;
+	}
+</style>
+
+</head>
+<body>
+	<nav>
+		<ul id="nav">
+			<li class="t-cuisines"><a class="active" href="#01" >Cuisines</a></li>
+			<li class="t-chefs"><a href="#02">Chefs</a></li>
+			<li class="t-reviews"><a href="#03">Reviews</a></li>
+			<li class="t-delivery"><a href="#04">Delivery</a></li>
+		</ul>
+	</nav>
+	<div id="01">Cuisines</div>
+	<div id="02">Chefs</div>
+	<div id="03">Reviews</div>
+	<div id="04">Delivery</div>
+
+	<script>
+
+		var tabs = document.querySelectorAll('#nav a')
+		tabs.forEach( tab => tab.addEventListener('click', makeActive))
+
+		function makeActive(){
+			makeInactive()
+			this.classList.add('active')
+			// event.preventDefault()
+		}
+
+		function makeInactive(){
+			tabs.forEach( tab => tab.classList.remove('active'))
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

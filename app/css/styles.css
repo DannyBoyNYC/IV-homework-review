@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: 'Lucida Grande', sans-serif;
+}
+.nav {
+    display: flex;
+    margin: 0;
+    padding: 10px 0 0 46px;
+    background-color: #ffcb2d;
+    list-style: none;
+    /*float: left;*/
+    width: calc(100% - 46px);
+    background-image: linear-gradient(to bottom, #ffcb2d 0%, #ffcb2d 96%, #9b8748 100%);
+}
+
+li {
+    display: flex;
+    /*float: left;*/
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    padding: 4px 8px;
+    border: 1px solid #9b8748;
+    margin: 0 6px 0 0;
+    /*float: left;*/
+    /*border-bottom: none;*/
+    /*background: #f9eaa9 url(i/off_bg.gif) repeat-x top left;*/
+    background-image: linear-gradient(
+    to bottom,
+    rgba(255, 236, 165, 1) 0%,
+    rgba(232, 213, 149, 1) 6%,
+    rgba(253, 233, 162, 1) 94%,
+    rgba(253, 233, 162, 1) 100%
+    );
+}
+a:hover,
+.nav a.active {
+    /*background: #fff url(i/on_bg.gif) repeat-x top left;*/
+    background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(224, 226, 240, 1) 6%,
+    rgba(254, 254, 254, 1) 53%
+    );
+    padding-bottom: 5px;
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    li {
+        flex-grow: 1;
+    }
+    a {
+        flex-grow: 1;
+    }
+}
+
+.nav .t-cuisines {
+    order: 3;
+}
+

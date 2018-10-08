@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tabs - js</title>
+	<style>
+	body {
+		margin:0;
+		font-family:"Lucida Grande", sans-serif;
+		font-size:100%;
+		padding-bottom: 42rem;
+	}
+	#nav {
+		display: flex;
+		background:#ffcb2d;
+		margin:0; 
+		padding:10px 0 0 46px;
+		list-style:none;
+		background: linear-gradient(to bottom, #ffcb2d 0%,#ffcb2d 96%,#9b8748 100%);
+		position: fixed;
+		top: 0;
+		width: 100%;
+	}
+	#nav li {
+		display: flex;
+	}
+	#nav li a {
+		text-decoration:none;
+		color:#333;
+		padding: 4px 8px;
+		border: 1px solid #9b8748;
+		margin: 0 6px 0 0;
+		background-image: linear-gradient(to bottom, rgba(255,236,165,1) 0%,rgba(232,213,149,1) 6%,rgba(253,233,162,1) 94%,rgba(253,233,162,1) 100%);
+		transition: all 0.25s linear;
+	}
+	#nav li a.active {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+		border-bottom: none;
+		padding-right: 6rem;
+	}
+
+	#nav li a:hover {
+		background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(224,226,240,1) 6%,rgba(254,254,254,1) 53%);
+		border-bottom: none;
+	}
+
+</style>
+
+</head>
+<body id="p-chefs">
+	<nav>
+		<ul id="nav">
+			<li class="t-cuisines"><a class="active" href="#01" >Cuisines</a></li>
+			<li class="t-chefs"><a href="#02">Chefs</a></li>
+			<li class="t-reviews"><a href="#03">Reviews</a></li>
+			<li class="t-delivery"><a href="#04">Delivery</a></li>
+		</ul>
+	</nav>
+
+	<p style="padding: 10rem 2rem 2rem 2rem;"></p>
+
+	<script>
+
+		var hash01 = 'Cuisines. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.'
+
+		var hash02 = 'Chefs. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.'
+
+		var hash03 = 'Reviews. Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.'
+
+		var hash04 = 'Delivery. Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.'
+
+		var tabs = document.querySelectorAll('#nav a')
+		var contentPara = document.querySelector('p')
+		tabs.forEach( tab => tab.addEventListener('click', makeActive))
+
+		contentPara.innerHTML = hash01
+
+		function makeActive(){
+			makeInactive()
+			this.classList.add('active')
+			if (this.hash == '#01'){
+				contentPara.innerHTML = hash01
+			} else if (this.hash == '#02'){
+				contentPara.innerHTML = hash02
+			} else if (this.hash == '#03'){
+				contentPara.innerHTML = hash03
+			} else if (this.hash == '#04'){
+				contentPara.innerHTML = hash04
+			}
+			event.preventDefault()
+		}
+
+		function makeInactive(){
+			tabs.forEach( tab => tab.classList.remove('active'))
+		}
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
