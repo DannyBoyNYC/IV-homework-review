@@ -1,5 +1,7 @@
 // get the tabs and attach an event listener to them
 var tabs = document.querySelectorAll('.nav a');
+console.log(tabs);
+
 tabs.forEach(function(tab){
     tab.addEventListener('click', makeActive);
 });

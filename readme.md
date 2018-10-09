@@ -4,11 +4,13 @@
 
 <img src="app/img/tabs-image.jpg">
 
-Examine `final.html` in the`done` folder.
+The homework is finished in `final.html` in the`app/done` folder.
 
 Examine `index-flex.html` in the `done` folder. Note the use of page fragments links. Note the problems with refresh (bookmarking etc.).
 
-In `cuisines.html` change the CSS selector to reference an active class and add that class to the HTML for the cuisines link, e.g.:
+## REVIEW
+
+In `app/cuisines.html` change the CSS selector to reference an active class and add that class to the HTML for the cuisines link, e.g.:
 
 ```html
 <li class="t-cuisines"><a class="active" href="cuisines.html">Cuisines</a></li>
@@ -29,13 +31,11 @@ a.active {
 }
 ```
 
-Create a script tag at the bottom of the document and add:
+Create a script and add:
 
-```html
-<script>
+```js
 	var tabs = document.querySelector('#nav a');
 	console.log(tabs);
-</script>
 ```
 
 This selects only the first tab. We need to use `querySelectorAll` because we are gathering more than one item:
@@ -80,7 +80,7 @@ function makeActive() {
 }
 ```
 
-Note the use of `this` to refer to the thing clicked on. `This` is very powerful. The value of `this` is usually determined by a functions execution context. Execution context simply means how a function is called. Our function is called by clicking on a link so `this` shows as a link in the console when we log it.
+Note the use of `this` to refer to the thing clicked on. The value of `this` is determined by a functions' execution context. Execution context simply means how a function is called. Our function is called by clicking on a link so `this` shows as a link in the console when we log it.
 
 Let's use `classList` again to add a class to the link we click on:
 
@@ -154,6 +154,8 @@ contentPara.innerHTML = cuisines;
 ```
 
 Note: we could use `textContent` instead of `innerHTML`.
+
+## TODO
 
 Style it using CSS:
 
